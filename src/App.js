@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import styles from './dome.module.css'
+console.log(styles, 'styles');
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
+          <p className={styles.dome}>你好</p>
           Learn React
         </a>
       </header>
