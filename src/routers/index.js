@@ -2,8 +2,9 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import loginRouters from './loginRouters'
 import homeRouters from './homeRouters'
+import uploadRouters from './uploadRouters'
 
-const routersList = [ ...loginRouters, ...homeRouters ]
+const routersList = [ ...loginRouters, ...homeRouters, ...uploadRouters ]
 
 
 console.log(routersList, 'routersList')
