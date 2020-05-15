@@ -65,7 +65,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "commit": "git-cz"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -138,8 +139,16 @@
     ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "commitizen": "^4.1.2",
     "fetch-defaults": "^1.0.0",
     "react-loadable": "^5.5.0",
     "react-router-dom": "^5.1.2"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   }
 }

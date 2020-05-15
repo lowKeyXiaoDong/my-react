@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { login } from '../../api/loginApi'
+import { login } from '@/api/loginApi'
+
 export default class Login extends Component {
     componentDidMount() {
         login({
