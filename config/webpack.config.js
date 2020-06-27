@@ -104,6 +104,11 @@ module.exports = function(webpackEnv) {
             // so that it honors browserslist config in package.json
             // which in turn let's users customize the target behavior as per their needs.
             postcssNormalize(),
+            require('postcss-pxtorem')({
+              remUnit: 75,
+              selectorBlackList: [], // 过滤
+              propList: ['*']
+            })
           ],
           sourceMap: isEnvProduction && shouldUseSourceMap,
         },
@@ -298,7 +303,13 @@ module.exports = function(webpackEnv) {
           'scheduler/tracing': 'scheduler/tracing-profiling',
         }),
         ...(modules.webpackAliases || {}),
-        '@': path.resolve(__dirname, '../src')
+        '@': path.resolve(__dirname, '../src'),
+        '@components': path.resolve(__dirname, '../src/components'),
+        '@api': path.resolve(__dirname, '../src/api'),
+        '@routers': path.resolve(__dirname, '../src/routers'),
+        '@store': path.resolve(__dirname, '../src/store'),
+        '@utils': path.resolve(__dirname, '../src/utils'),
+        '@views': path.resolve(__dirname, '../src/views'),
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding
