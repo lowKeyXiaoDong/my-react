@@ -1,16 +1,16 @@
-import React, {Component} from 'react';
-import Header from "@components/header";
+import React, {Component} from 'react'
+import Nav from '@components/nav'
 import styles from './style.module.scss'
 
 class TaskIndex extends Component {
   render() {
     return (
       <div className={styles.task}>
-        <Header
-          leftShow={true}
+        <Nav
+          leftContent={'返回'}
         >
-          任务活动
-        </Header>
+          任务说明
+        </Nav>
       </div>
     );
   }
