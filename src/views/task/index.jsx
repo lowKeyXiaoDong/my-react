@@ -1,16 +1,39 @@
-import React, {Component} from 'react'
-import Nav from '@components/nav'
+import React, { Component, Suspense, lazy, Profiler } from 'react'
 import styles from './style.module.scss'
 
+const Nav = lazy(() => import('@components/nav'))
+const Input = lazy(() => import('@components/input'))
+
 class TaskIndex extends Component {
+  state = {
+    inputValue: ''
+  }
+
   render() {
+    const { inputValue } = this.state
     return (
       <div className={styles.task}>
-        <Nav
-          leftContent={'返回'}
-        >
-          任务说明
-        </Nav>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Nav
+            leftContent={'返回'}
+            rightContent={'搜索'}
+            onLeftClick={() => {
+              console.log('点击返回')
+            }}
+            onRightClick={() => {
+              console.log('right')
+            }}
+          >
+            任务说明
+          </Nav>
+          <Input onChange={(value) => {
+            console.log(value, 'value')
+          }}/>
+
+          <button onClick={() => {
+            console.log(this.state)
+          }}>提交</button>
+        </Suspense>
       </div>
     );
   }

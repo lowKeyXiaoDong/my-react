@@ -9,8 +9,13 @@
 .left, .right {
   width: 50px;
   height: 100%;
+  font-size: 16px;
+  color: #ffffff;
 }
 .content {
-  font-size: 20px;
+  font-size: 16px;
   color: #ffffff;
+  flex: 1;
+  height: 100%;
+  text-align: center;
 }
