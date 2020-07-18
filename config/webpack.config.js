@@ -132,12 +132,11 @@ module.exports = function(webpackEnv) {
     }
     return loaders;
   };
-
   return {
     mode: isEnvProduction ? 'production' : isEnvDevelopment && 'development',
     // Stop compilation early in production
     bail: isEnvProduction,
-    devtool: isEnvProduction
+    devtool: !isEnvProduction
       ? shouldUseSourceMap
         ? 'source-map'
         : false
@@ -225,6 +224,9 @@ module.exports = function(webpackEnv) {
               // Pending further investigation:
               // https://github.com/terser-js/terser/issues/120
               inline: 2,
+              drop_console: true,
+              drop_debugger: false,
+              pure_funcs: ['console.log'] // 移除console
             },
             mangle: {
               safari10: true,
@@ -320,7 +322,7 @@ module.exports = function(webpackEnv) {
         // To fix this, we prevent you from importing files out of src/ -- if you'd like to,
         // please link the files into your node_modules/ and let module-resolution kick in.
         // Make sure your source files are compiled, as they will not be processed in any way.
-        new ModuleScopePlugin(paths.appSrc, [paths.appPackageJson]),
+        new ModuleScopePlugin(paths.appSrc, [paths.appPackageJson])
       ],
     },
     resolveLoader: {

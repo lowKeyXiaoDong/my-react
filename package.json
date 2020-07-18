@@ -137,21 +137,19 @@
       "jest-watch-typeahead/testname"
     ]
   },
-  "babel": {
-    "presets": [
-      "react-app"
-    ]
-  },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "babel-plugin-import": "^1.13.0",
     "commitizen": "^4.1.2",
     "fetch-defaults": "^1.0.0",
     "gitmoji-cli": "^3.2.4",
+    "hard-source-webpack-plugin": "^0.13.1",
     "husky": "^4.2.5",
     "postcss-pxtorem": "^5.1.1",
     "react-loadable": "^5.5.0",
     "react-router-dom": "^5.1.2",
-    "react-window": "^1.8.5"
+    "react-window": "^1.8.5",
+    "uglifyjs-webpack-plugin": "^2.2.0"
   }
 }

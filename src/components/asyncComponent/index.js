@@ -18,6 +18,14 @@ const asyncComponent = (importComponent) => {
         })
     }
 
+    //组件将被卸载
+    componentWillUnmount() {
+      //重写组件的setState方法，直接返回空
+      this.setState = (state, callback) => {
+        return
+      }
+    }
+
     render() {
       const C = this.state.component
       return C ? <C {...this.props} /> : null

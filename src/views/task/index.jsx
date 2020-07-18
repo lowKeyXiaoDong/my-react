@@ -1,16 +1,11 @@
-import React, { Component, Suspense, lazy, Profiler } from 'react'
+import React, { Component, Suspense, lazy } from 'react'
 import styles from './style.module.scss'
 
 const Nav = lazy(() => import('@components/nav'))
 const Input = lazy(() => import('@components/input'))
 
 class TaskIndex extends Component {
-  state = {
-    inputValue: ''
-  }
-
   render() {
-    const { inputValue } = this.state
     return (
       <div className={styles.task}>
         <Suspense fallback={<div>Loading...</div>}>

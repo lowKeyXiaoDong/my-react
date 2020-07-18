@@ -19,6 +19,7 @@ const fs = require('fs');
 const chalk = require('react-dev-utils/chalk');
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 const clearConsole = require('react-dev-utils/clearConsole');
 const checkRequiredFiles = require('react-dev-utils/checkRequiredFiles');
 const {
@@ -117,6 +118,10 @@ checkBrowsers(paths.appPath, isInteractive)
       urls.lanUrlForConfig
     );
     const devServer = new WebpackDevServer(compiler, serverConfig);
+
+    config.plugins.push(
+      new HardSourceWebpackPlugin()
+    )
     // Launch WebpackDevServer.
     devServer.listen(port, HOST, err => {
       if (err) {
