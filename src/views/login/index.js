@@ -1,16 +1,12 @@
-import React, { Component } from 'react'
-import { login } from '@/api/loginApi'
+import React from 'react'
+import style from './style.module.scss'
 
-export default class Login extends Component {
-    componentDidMount() {
-        login({
-            type: '1'
-        })
-    }
-
-    render() {
-        return (
-            <div>登录</div>
-        )
-    }
+const Login = () => {
+    return (
+      <div className={style.hcx_warp}>
+          <img src="/images/1.gif" alt=""/>
+      </div>
+    )
 }
+
+export default Login

@@ -1,0 +1,13 @@
+.hcx_warp {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  //background: url("./imgs/loginbg.jpg") no-repeat center;
+  //background-size: cover;
+  > img {
+    width: 100%;
+    height: 100%;
+  }
+}
