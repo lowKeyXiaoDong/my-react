@@ -6,35 +6,35 @@ import uploadRouters from './uploadRouters'
 import taskRouters from './taskRouters'
 
 const routersList = [
-    ...loginRouters,
-    ...homeRouters,
-    ...uploadRouters,
-    ...taskRouters
+	...loginRouters,
+	...homeRouters,
+	...uploadRouters,
+	...taskRouters
 ]
 
 
 function BasicRoute () {
-    return (
-        <Router>
-            <Switch>
-                {
-                    routersList.length > 0 && routersList.map(item => {
-                        return (
-                            <Route
-                                path={item.path}
-                                exact={item.exact}
-                                key={item.path}
-                                component={item.component}
-                            >
-                            </Route>
-                        )
-                    })
-                }
-                {/*路由重定向*/}
-                <Redirect to='/task'></Redirect>
-            </Switch>
-        </Router>
-    )
+	return (
+		<Router>
+			<Switch>
+				{
+					routersList.length > 0 && routersList.map(item => {
+						return (
+							<Route
+								path={item.path}
+								exact={item.exact}
+								key={item.path}
+								component={item.component}
+							>
+							</Route>
+						)
+					})
+				}
+				{/*路由重定向*/}
+				<Redirect to='/home'></Redirect>
+			</Switch>
+		</Router>
+	)
 }
 
 export default BasicRoute
