@@ -1,5 +1,4 @@
 import asyncComponent from '../components/asyncComponent'
-
 const AmapPage = asyncComponent(() => import('../views/amap'))
 
 const routerList = [
