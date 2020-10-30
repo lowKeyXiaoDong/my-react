@@ -4,12 +4,14 @@ import loginRouters from './loginRouters'
 import homeRouters from './homeRouters'
 import uploadRouters from './uploadRouters'
 import taskRouters from './taskRouters'
+import amapRouters from './amapRouters'
 
 const routersList = [
 	...loginRouters,
 	...homeRouters,
 	...uploadRouters,
-	...taskRouters
+	...taskRouters,
+	...amapRouters
 ]
 
 
