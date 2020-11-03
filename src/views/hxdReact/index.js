@@ -19,11 +19,11 @@ const jsx = (
     <p>H X D</p>
     <p>hanxiaodon</p>
     <a href="javascrips: 0">HANXIAODON</a>
-    <FunctionComponet name="韩晓东" />
+    {/* <FunctionComponet name="韩晓东" />
     <ClassComponent name="韩晓东" />
     <ul>
       <Node />
-    </ul>
+    </ul> */}
   </div>
 )
 
