@@ -20,3 +20,6 @@ h2, p {
   margin-block-start: 0;
   margin-block-end: 0;
 }
+.amap-logo, .amap-copyright {
+  display: none !important;
+}
