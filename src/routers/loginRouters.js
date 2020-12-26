@@ -1,6 +1,6 @@
 import asyncComponent from '../components/asyncComponent'
 
-const Login = asyncComponent(() => import('../views/login'))
+const Login = asyncComponent(() => import('../views/login/index.jsx'))
 
 const routerList = [
     {

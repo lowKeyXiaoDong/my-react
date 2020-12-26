@@ -4,7 +4,7 @@ import style from './style.module.scss'
 const Login = () => {
     return (
       <div className={style.hcx_warp}>
-          <img src="/images/1.gif" alt=""/>
+        <img src="/images/1.gif" alt=""/>
       </div>
     )
 }

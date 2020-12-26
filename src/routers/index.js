@@ -31,7 +31,7 @@ function BasicRoute () {
                     })
                 }
                 {/*路由重定向*/}
-                <Redirect to='/task'></Redirect>
+                <Redirect to='/home'></Redirect>
             </Switch>
         </Router>
     )
