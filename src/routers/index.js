@@ -5,13 +5,15 @@ import homeRouters from './homeRouters'
 import uploadRouters from './uploadRouters'
 import taskRouters from './taskRouters'
 import amapRouters from './amapRouters'
+import kkbRouter from './kkb'
 
 const routersList = [
 	...loginRouters,
 	...homeRouters,
 	...uploadRouters,
 	...taskRouters,
-	...amapRouters
+	...amapRouters,
+	...kkbRouter
 ]
 
 
