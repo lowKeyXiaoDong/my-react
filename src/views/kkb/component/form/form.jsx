@@ -2,8 +2,8 @@ import React from 'react'
 import FieldContext from './FieldContext'
 import useForm from './useForm'
 
-export default function Form({ children, onFinish, onFinishFalied, form }) {
-  const [formInstance] = useForm()
+export default function Form({ children, onFinish, onFinishFalied, form }, ref) {
+  const [formInstance] = useForm(form)
   formInstance.setCallbacks({
     onFinish,
     onFinishFalied,

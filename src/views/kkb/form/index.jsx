@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import Input from '../component/form/Input'
 import Form, { Field } from '../component/form'
 
@@ -17,7 +17,6 @@ const FromIndex = () => {
   }
 
   useEffect(() => {
-    console.log('form', form)
     form.setFieldsValue({ userName: 'default' })
   }, [])
 

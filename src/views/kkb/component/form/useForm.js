@@ -50,6 +50,18 @@ class FormStore {
 
   validte = () => {
     let err = []
+    this.fieldEntities.forEach(field => {
+      const { name, rules } = field.props
+      const rule = rules && rules[0]
+      const value = this.getFieldValue(name)
+
+      if (rule && rule.required && (value === undefined || value === '')) {
+        err.push({
+          [name]: rule.message,
+          value,
+        })
+      }
+    })
 
     return err
   }
@@ -58,7 +70,7 @@ class FormStore {
     const { onFinish, onFinishFalied } = this.callbacks
     const err = this.validte()
 
-    if (err.length === 1) {
+    if (err.length === 0) {
       onFinish(this.getFieldsValue())
     } else {
       onFinishFalied(err, this.getFieldsValue())
@@ -72,16 +84,20 @@ class FormStore {
       setFieldsValue: this.setFieldsValue,
       registerFieldEntity: this.registerFieldEntity,
       setCallbacks: this.setCallbacks,
-      submit: this.submit
+      submit: this.submit,
     }
   }
 }
 
-export default function useForm() {
+export default function useForm(form) {
   const formRef = React.useRef()
   if (!formRef.current) {
-    const formStore = new FormStore()
-    formRef.current = formStore.getForm()
+    if (form) {
+      formRef.current = form
+    } else {
+      const formStore = new FormStore()
+      formRef.current = formStore.getForm()
+    }
   }
 
   return [formRef.current]
