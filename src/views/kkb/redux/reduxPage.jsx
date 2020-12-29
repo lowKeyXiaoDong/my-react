@@ -15,12 +15,25 @@ class reduxPage extends Component {
       payload: 10,
     })
   }
+
+  asyadd = () => {
+    store.dispatch((dispatch, getState) => {
+      setTimeout(() => {
+        dispatch({
+          type: 'ADD',
+          payload: 10,
+        })
+      }, 1000)
+    })
+  }
+
   render() {
     return (
       <div>
         reduxPage
         <div>{store.getState()}</div>
         <button onClick={this.add}>add</button>
+        <button onClick={this.asyadd}>asyadd</button>
       </div>
     )
   }
