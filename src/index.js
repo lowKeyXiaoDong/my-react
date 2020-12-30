@@ -3,11 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import Routers from './routers'
+import { Provider } from 'react-redux'
+import store from './views/kkb/redux/store'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Routers />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <React.StrictMode>
+      <Routers />
+    </React.StrictMode>
+  </Provider>,
   document.getElementById('root')
 );
 
