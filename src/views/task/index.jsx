@@ -1,11 +1,26 @@
 import React, { Component, Suspense, lazy } from 'react'
 import styles from './style.module.scss'
+import keepAlive from '@components/keepAlive'
 
 const Nav = lazy(() => import('@components/nav'))
 const Input = lazy(() => import('@components/input'))
 
 class TaskIndex extends Component {
+  state = {
+    count: 0,
+  }
+
+  add = () => {
+    let { count } = this.state
+    this.setState({ count: 2 })
+  }
+
+  submit = () => {
+    this.props.history.push('/home')
+  }
+
   render() {
+    const { count } = this.state
     return (
       <div className={styles.task}>
         <Suspense fallback={<div>Loading...</div>}>
@@ -21,17 +36,19 @@ class TaskIndex extends Component {
           >
             任务说明
           </Nav>
-          <Input onChange={(value) => {
-            console.log(value, 'value')
-          }}/>
+          <Input
+            onChange={(value) => {
+              console.log(value, 'value')
+            }}
+          />
 
-          <button onClick={() => {
-            console.log(this.state)
-          }}>提交</button>
+          <p>{count}</p>
+          <button onClick={this.add}>add</button>
+          <button onClick={this.submit}>提交</button>
         </Suspense>
       </div>
-    );
+    )
   }
 }
 
-export default TaskIndex;
+export default keepAlive(TaskIndex)
