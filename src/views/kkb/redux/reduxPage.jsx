@@ -31,7 +31,7 @@ class reduxPage extends Component {
     return (
       <div>
         reduxPage
-        <div>{store.getState()}</div>
+        <div>{store.getState().count}</div>
         <button onClick={this.add}>add</button>
         <button onClick={this.asyadd}>asyadd</button>
       </div>

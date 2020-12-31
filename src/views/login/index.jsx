@@ -3,7 +3,7 @@ import style from './style.module.scss'
 import { useSelector, useDispatch } from 'react-redux'
 
 const Login = () => {
-  const state = useSelector((state) => state) // 获取store.state
+  const state = useSelector(({ count }) => count) // 获取store.state
   const dispatch = useDispatch() // 获取dispatch
 
   const add = () => {

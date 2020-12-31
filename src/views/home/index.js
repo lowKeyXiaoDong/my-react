@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 @connect(
-    (state) => ({ state }),
+    ({ count }) => ({ count }),
     (dispatch) => {
         let comst = {
             add: () => ({ type: 'ADD' })
