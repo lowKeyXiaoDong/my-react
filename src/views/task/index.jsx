@@ -11,7 +11,6 @@ class TaskIndex extends Component {
   }
 
   add = () => {
-    let { count } = this.state
     this.setState({ count: 2 })
   }
 
