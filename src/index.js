@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import Routers from './routers'
-import { Provider } from 'react-redux'
+// import { Provider } from 'react-redux'
+import { Provider } from './views/kkb/redux/hReactRedux'
 import store from './views/kkb/redux/store'
 
 ReactDOM.render(

@@ -1,18 +1,19 @@
 import React, { Component } from 'react'
 import { Button } from 'antd-mobile'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+// import { connect } from 'react-redux'
+// import { bindActionCreators } from 'redux'
+import { bindActionCreators, connect } from '../kkb/redux/hReactRedux'
 
 @connect(
     ({ count }) => ({ count }),
     (dispatch) => {
-        let comst = {
+        let creators = {
             add: () => ({ type: 'ADD' })
         }
-        comst = bindActionCreators(comst, dispatch)
+        creators = bindActionCreators(creators, dispatch)
         return {
             dispatch,
-            ...comst
+            ...creators
         }
     }
 )
@@ -23,13 +24,14 @@ class Home extends Component {
     }
     render() {
         console.log(this.props);
-        const { state, add } = this.props
+        const { count, add, dispatch } = this.props
         return (
             <div>
-                <p>{state}</p>
+                <p>{count}</p>
                 <button onClick={add}>add</button>
-                <button onClick={() => this.onWeixin()}>点击打开微信</button>
-                <Button type="primary" onClick={() => this.onWeixin()}>点击打开微信</Button>
+                <button onClick={() => dispatch({ type: 'ADD' })}>dispatchAdd</button>
+                {/* <button onClick={() => this.onWeixin()}>点击打开微信</button>
+                <Button type="primary" onClick={() => this.onWeixin()}>点击打开微信</Button> */}
             </div>
         )
     }

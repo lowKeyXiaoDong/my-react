@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './style.module.scss'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from '../kkb/redux/hReactRedux'
 
 const Login = () => {
   const state = useSelector(({ count }) => count) // 获取store.state
