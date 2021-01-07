@@ -3,6 +3,7 @@ import asyncComponent from '../components/asyncComponent'
 const KkbHome = asyncComponent(() => import('../views/kkb/home'))
 const FromIndex = asyncComponent(() => import('../views/kkb/form'))
 const ReduxPage = asyncComponent(() => import('../views/kkb/redux/reduxPage'))
+const App = asyncComponent(() => import('./kkbRouters'))
 
 const routerList = [
   {
@@ -22,6 +23,12 @@ const routerList = [
     name: 'ReduxPage',
     exact: true,
     component: ReduxPage
+  },
+  {
+    path: '/app',
+    name: 'App',
+    exact: true,
+    component: App
   }
 ]
 export default routerList

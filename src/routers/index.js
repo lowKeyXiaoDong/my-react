@@ -35,7 +35,7 @@ function BasicRoute() {
 					})
 				}
 				{/*路由重定向*/}
-				<Redirect to='/home'></Redirect>
+				<Redirect to='/app'></Redirect>
 			</Switch>
 		</Router>
 	)
