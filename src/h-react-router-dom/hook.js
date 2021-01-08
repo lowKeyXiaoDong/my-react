@@ -1,20 +1,19 @@
 import React, { useContext } from 'react'
-import RouterContext from './RouterContext'
+import { RouterContext } from './RouterContext'
 
-export function useHistory() {
+export const useHistory = () => {
   return useContext(RouterContext).history
 }
 
-export function useLocation() {
+export const useLocation= () => {
   return useContext(RouterContext).location
 }
 
-export function useRouteMatch() {
-  return useContext(RouterContext).macth
+export const useRouteMatch = () => {
+  return useContext(RouterContext).match
 }
 
-export function useParams() {
+export const useParams = () => {
   const match = useContext(RouterContext).match
-
-  return match ? match.params : {}
+  return match ? match.params : null
 }

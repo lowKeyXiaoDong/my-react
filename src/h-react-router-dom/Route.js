@@ -1,18 +1,18 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { matchPath } from 'react-router-dom'
-import RouterContext from './RouterContext'
+import { RouterContext } from './RouterContext'
 
-class Route extends Component {
+export default class Route extends React.Component {
   render() {
     return (
       <RouterContext.Consumer>
         {(context) => {
-          const { location } = context
           const { path, children, component, render, computedMatch } = this.props
+          // const match = window.location.pathname === path
           const match = computedMatch
             ? computedMatch
             : path
-            ? matchPath(location.pathname, this.props)
+            ? matchPath(context.location.pathname, this.props)
             : context.match
 
           const props = {
@@ -42,5 +42,3 @@ class Route extends Component {
     )
   }
 }
-
-export default Route

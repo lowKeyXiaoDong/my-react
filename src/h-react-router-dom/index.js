@@ -1,6 +1,19 @@
 import BrowserRouter from './BrowserRouter'
-import Link from './Link'
 import Route from './Route'
+import Link from './Link'
 import Switch from './Switch'
+import withRouter from './withRouter'
 
-export { BrowserRouter, Link, Route, Switch }
+import { useHistory, useLocation, useParams, useRouteMatch } from './hook'
+
+export {
+  BrowserRouter,
+  Route,
+  Link,
+  Switch,
+  useHistory,
+  useLocation,
+  useParams,
+  useRouteMatch,
+  withRouter,
+}

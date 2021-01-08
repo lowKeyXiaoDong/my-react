@@ -1,6 +1,6 @@
 import React from 'react'
 import { matchPath } from 'react-router-dom'
-import RouterContext from './RouterContext'
+import { RouterContext } from './RouterContext'
 
 export default class Switch extends React.Component {
   render() {
@@ -10,7 +10,6 @@ export default class Switch extends React.Component {
           let match
           let element
 
-          // todo 匹配
           React.Children.forEach(this.props.children, (child) => {
             if (match == null) {
               element = child

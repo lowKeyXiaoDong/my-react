@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Link, Switch } from '../h-react-router-dom'
+import { BrowserRouter as Router, Route, Link, Switch, useRouteMatch, withRouter } from '../h-react-router-dom'
 
 import HomePage from '../views/kkb/homepage'
 import Login from '../views/kkb/login'
@@ -25,14 +25,15 @@ function App(props) {
           />
           <Route path='/login' component={Login} />
           <Route path='/user' component={User} />
-          <Route path='/predoct/:id' component={Predoct} />
+          <Route path='/predoct/:id' component={() => <Predoct />} />
           <Route component={errPage} />
         </Switch>
       </Router>
     </div>
   )
 }
-function Predoct(params) {
+function Predoct(props) {
+  const match = useRouteMatch()
   return <div>Predoct: id</div>
 }
 function renderDom(params) {

@@ -1,22 +1,25 @@
-import React, { Component } from 'react'
-import RouterContext from './RouterContext'
+import React from 'react'
+import { RouterContext } from './RouterContext'
 
-class Router extends Component {
-  static computeRootMatch(pathname) {
-    return { path: '/', url: '/', params: {}, isExact: pathname === '/' }
+export default class Router extends React.Component {
+  static computeRootMatch (pathname) {
+    return { path: "/", url: "/", params: {}, isExact: pathname === "/" }
   }
   constructor(props) {
     super(props)
+ 
     this.state = {
-      location: props.history.location,
+      location: props.history.location
     }
 
-    this.unListen = props.history.listen(({ location }) => {
+    // 监听
+    this.unListen = props.history.listen(({location}) => {
       this.setState({ location })
     })
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
+    // 取消监听
     this.unListen()
   }
 
@@ -26,7 +29,7 @@ class Router extends Component {
         value={{
           history: this.props.history,
           location: this.state.location,
-          match: Router.computeRootMatch(this.state.location.pathname),
+          match: Router.computeRootMatch(this.state.location.pathname)
         }}
       >
         {this.props.children}
@@ -34,5 +37,3 @@ class Router extends Component {
     )
   }
 }
-
-export default Router
