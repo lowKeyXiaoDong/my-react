@@ -34,7 +34,7 @@ function BasicRoute() {
         <Route path='/kkb' render={kkb}></Route>
         <PrivateRoute path='/userPage' component={UserPage} />
         {/*路由重定向*/}
-        {/* <Redirect to='/home'></Redirect> */}
+        <Redirect to='/kkb'></Redirect>
       </Switch>
     </Router>
   )
