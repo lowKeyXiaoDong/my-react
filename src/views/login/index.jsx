@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import style from './style.module.scss'
-import { getLogin, sagaLogin } from '../../service'
+import { sagaLogin } from '../../service'
 import { connect } from 'react-redux'
 
 const Login = (props) => {
@@ -8,10 +8,9 @@ const Login = (props) => {
   const [value, setValue] = useState('')
 
   const Login = async () => {
-    sagaLogin(value)
+    props.login(value)
   }
 
-  console.log(props);
   return (
     <div className={style.hcx_warp}>
       {/* <img src='/images/1.gif' alt='' />
@@ -36,5 +35,8 @@ const Login = (props) => {
 }
 
 export default connect(
-  ({ user }) => ({ isLogin: user.isLogin })
+  ({ user }) => ({ isLogin: user.isLogin }),
+  {
+    login: (userName) => ({type: 'LOGIN_SAGA', payload: { userName }})
+  }
 )(Login)

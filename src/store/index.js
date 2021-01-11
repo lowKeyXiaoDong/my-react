@@ -11,4 +11,5 @@ const store = createStore(
 )
 
 sagaMiddleware.run(loginSaga)
+
 export default store

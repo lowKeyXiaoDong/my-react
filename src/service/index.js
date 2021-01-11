@@ -41,6 +41,7 @@ export const getMoreUserInfo = (dispatch, userInfo) => {
   })
 }
 
-export const sagaLogin = (userName) => {
+export const login = (userName) => {
+  console.log(userName, 'userName');
   return { type: LOGIN_SAGA, payload: { userName } }
 }

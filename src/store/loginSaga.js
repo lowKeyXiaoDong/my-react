@@ -30,9 +30,9 @@ const LoginService = {
 }
 
 function* loginHandle (action) {
-  console.log(action, 'action');
   try {
     let res1 = call(LoginService.login, action.payload)
+    console.log(res1);
     yield put({ type: LOGIN_SUCCESS, payload: res1})
   } catch (error) {
     yield put({ type: LOGIN_FAILURE, payload: error })
