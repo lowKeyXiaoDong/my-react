@@ -1,0 +1,70 @@
+.mod {
+  width: 100vw;
+  height: 13.87vw;
+}
+.box {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #ffffff;
+  width: 100vw;
+  height: 13.87vw;
+}
+.primary {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 3.2vw;
+  border-radius: 4.8vw;
+  background-color: #f2f3f4;
+  padding-right: 4vw;
+  padding-left: 4.27vw;
+  width: 81.87vw;
+  height: 9.6vw;
+}
+.wrap {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 5.33vw;
+}
+.fail {
+  margin-right: 1.07vw;
+  width: 3.33vw;
+  height: 3.33vw;
+}
+.icon-failWrap {
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  width: 4.8vw;
+  height: 4.8vw;
+}
+.fail_1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4.8vw;
+  height: 4.8vw;
+}
+.fail_2 {
+  position: relative;
+  width: 2.13vw;
+  height: 2.13vw;
+}
+.word {
+  max-width: 10.13vw;
+  height: 5.33vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 5.33vw;
+  white-space: nowrap;
+  color: #ff8e22;
+  font-size: 4.27vw;
+  font-weight: 400;
+}

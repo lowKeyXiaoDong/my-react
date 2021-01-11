@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Button } from 'antd-mobile'
+import Search from "@components/search";
 
 export default class Home extends Component {
   onWeixin() {
@@ -16,6 +17,7 @@ export default class Home extends Component {
   render() {
     return (
       <div>
+        <Search />
         <Button type='primary' onClick={() => this.onWeixin()}>
           点击打开微信
         </Button>
