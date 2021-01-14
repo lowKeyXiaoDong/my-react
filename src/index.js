@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 // import ReactDOM from 'react-dom'
 import ReactDOM from './hreact/react-dom'
 import Component from './hreact/Component'
 import './index.css'
 
-const FunctionComponent = (props) => {
+function FunctionComponent(props) {
   return <div>{props.name}</div>
 }
 
@@ -14,17 +14,30 @@ class ClassComponent extends Component {
   }
 }
 
+function FragmentComponent(props) {
+  return (
+    <Fragment>
+      <li>123</li>
+      <li>456</li>
+    </Fragment>
+  )
+}
+
 const jsx = (
   <div className='warp'>
     <h1>全栈</h1>
     <a href='https://www.kaikeba.com'>kkb</a>
     <FunctionComponent name='函数组件' />
     <ClassComponent name='类组件' />
+    <ul>
+      <FragmentComponent />
+    </ul>
   </div>
 )
 
 // render函数实现
 // 函数组件
 // 类组件
+// Fragment
 
 ReactDOM.render(jsx, document.getElementById('root'))

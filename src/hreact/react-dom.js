@@ -10,9 +10,10 @@ function isStringOrNumber(vnode) {
 }
 // 把vnode转为真实的node
 function createNode(vnode) {
-  console.log(vnode)
   let node = null
   const { type } = vnode
+
+  console.log(vnode)
 
   if (typeof type === 'string') {
     // 原生标签元素
