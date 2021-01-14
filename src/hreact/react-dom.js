@@ -13,8 +13,7 @@ function createNode(vnode) {
   let node = null
   const { type } = vnode
 
-  console.log(vnode)
-
+  console.log(vnode, 'vnode')
   if (typeof type === 'string') {
     // 原生标签元素
     node = updateHostComponent(vnode)

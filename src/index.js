@@ -16,10 +16,10 @@ class ClassComponent extends Component {
 
 function FragmentComponent(props) {
   return (
-    <Fragment>
-      <li>123</li>
-      <li>456</li>
-    </Fragment>
+    <>
+      <h1>123</h1>
+      <h1>456</h1>
+    </>
   )
 }
 
@@ -29,9 +29,7 @@ const jsx = (
     <a href='https://www.kaikeba.com'>kkb</a>
     <FunctionComponent name='函数组件' />
     <ClassComponent name='类组件' />
-    <ul>
-      <FragmentComponent />
-    </ul>
+    <FragmentComponent />
   </div>
 )
 
