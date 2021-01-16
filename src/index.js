@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 // import ReactDOM from 'react-dom'
-import ReactDOM from './hreact/react-dom'
-import Component from './hreact/Component'
+import ReactDOM from './hreact2/react-dom'
+import Component from './hreact2/Component'
 import './index.css'
 
 function FunctionComponent(props) {
@@ -29,7 +29,7 @@ const jsx = (
     <a href='https://www.kaikeba.com'>kkb</a>
     <FunctionComponent name='函数组件' />
     <ClassComponent name='类组件' />
-    <FragmentComponent />
+    {/* <FragmentComponent /> */}
   </div>
 )
 
