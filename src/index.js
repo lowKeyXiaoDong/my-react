@@ -1,11 +1,14 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 // import ReactDOM from 'react-dom'
-import ReactDOM from './hreact2/react-dom'
+import ReactDOM, { useState } from './hreact2/react-dom'
 import Component from './hreact2/Component'
 import './index.css'
 
 function FunctionComponent(props) {
-  return <div>{props.name}</div>
+  let [count, setCount] = useState(0)
+  return <div>
+    <button onClick={() => setCount(count+1)}>{count}</button>
+  </div>
 }
 
 class ClassComponent extends Component {
